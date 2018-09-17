@@ -5,14 +5,33 @@
     
     <style type="text/css">
     * {
-      height: 100%;
       width: 100%;
       padding: 0;
       margin: 0;
     } 
+    body {
+      box-sizing: content-box;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #c4c4c4;
+    }
+    canvas {
+      flex: 1;
+    }
+    h1 {
+      position: absolute;
+      top: 50%;
+      height: 50px;
+      width: 100%;
+      text-align: center;
+      margin: 10px;
+      opacity: .3;
+      z-index: -1;
+    }
     </style>
   </head>
-  <body>
+  <body onload="animation()">
+    <h1>HOLD MOUSE CLICK TO BLOOM BALLS ;-)</h1>
     <canvas id="canvas"></canvas>
   </body>
   <script type="text/javascript" src="./canvas.js"></script>

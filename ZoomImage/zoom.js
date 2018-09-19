@@ -15,8 +15,9 @@ function draw(img) {
 }
 
 function drawRectTangle(x, y) {
+  blockctx.globalAlpha = '0.4';
   blockctx.fillStyle = "red";
-  blockctx.fillRect(x, y, 50, 50);
+  blockctx.fillRect(x, y, 60, 45.4);
   blockctx.fill();
 }
 
@@ -24,12 +25,12 @@ var zoom = function(event) {
     var x = event.layerX;
     var y = event.layerY;
     zoomctx.clearRect(0,0, 1000,1000);
-    zoomctx.drawImage(canvas, x -50,  y -50, 150, 150, 0, 0, 400, 400);
+    zoomctx.drawImage(canvas, x - 30,  y - 20, 60, 45.4, 0, 0, 300, 227);
 };
 
 function moveTheRectTangle(e) {
   blockctx.clearRect(0,0, 1000, 1000);
-  drawRectTangle(e.layerX - 25, e.layerY - 25);
+  drawRectTangle(e.layerX - 30, e.layerY - 20);
 }
 
 function combination(e) {

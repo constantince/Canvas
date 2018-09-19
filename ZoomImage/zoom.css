@@ -1,0 +1,11 @@
+#canvas-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+#canvas-warpper {
+  position: relative;
+  height: 227px;
+  width: 300px;
+}

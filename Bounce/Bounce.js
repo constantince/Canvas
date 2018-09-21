@@ -52,7 +52,7 @@ Balls.prototype.draw = function() {
 Balls.prototype.move = function() {
   
   for(let i=0; i<ballStack.length; i++) {
-    if(ballStack[i] !== this && distance(this.x, this.y, ballStack[i].x, ballStack[i].y) <= this.radius + ballRadius) {
+    if(ballStack[i] !== this && distance(this.x, this.y, ballStack[i].x, ballStack[i].y) < this.radius + ballRadius) {
       // console.log('......')
         this.dx = -this.dx;
         this.dy = -this.dy;
@@ -73,11 +73,11 @@ Balls.prototype.move = function() {
 
 
 function createStartPoint(x) {
-  return Math.floor(Math.random() * (x - ballRadius));;
+  return Math.floor(Math.random() * (x - 2 * ballRadius));;
 }
 
 var ballStack = [];
-var number = 3;
+var number = 2;
 
 for(let i=0; i<number; i++) {
   let ball = new Balls(createStartPoint(WIDTH), createStartPoint(HEIGHT), dx, dy, ballRadius);
